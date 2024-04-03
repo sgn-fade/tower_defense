@@ -1,0 +1,11 @@
+res://game.tscn
+res://tower.tscn
+res://CharacterBody2D.gd
+res://spawner.gd
+res://enemy.tscn
+res://tower.gd
+res://player_mouse.gd
+res://player_mouse.tscn
+res://mana_ui.gd
+res://world_data.gd
+res://mana_ui.tscn

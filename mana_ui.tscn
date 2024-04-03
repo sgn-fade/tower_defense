@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c46sb8yk1p1hh"]
+
+[ext_resource type="Script" path="res://mana_ui.gd" id="1_wysiw"]
+[ext_resource type="Texture2D" uid="uid://cd303xn3bxqcl" path="res://mana.png" id="2_2034i"]
+
+[node name="mana_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 41.0
+offset_bottom = 41.0
+scale = Vector2(4, 4)
+script = ExtResource("1_wysiw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2034i")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 6.5
+offset_right = 22.0
+offset_bottom = 29.5
+text = "0"
