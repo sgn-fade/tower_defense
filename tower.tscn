@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://jn3nv8awmg6d"]
 
-[ext_resource type="Script" path="res://tower.gd" id="1_n57kb"]
+[ext_resource type="Script" path="res://scripts/Tower.cs" id="1_1763l"]
 [ext_resource type="Texture2D" uid="uid://crcw0vcm5yi2m" path="res://tower.png" id="1_p5uby"]
 [ext_resource type="Texture2D" uid="uid://jnd2y06n500d" path="res://enemy_health_under.png" id="3_7uc8d"]
 [ext_resource type="Texture2D" uid="uid://dlq05o34xu5e7" path="res://enemy_health_progress.png" id="4_50pgf"]
@@ -11,14 +11,14 @@ height = 231.0
 
 [node name="tower" type="StaticBody2D"]
 scale = Vector2(2, 2)
-script = ExtResource("1_n57kb")
+script = ExtResource("1_1763l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(25, 13)
 texture = ExtResource("1_p5uby")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.505, 0.505)
+zoom = Vector2(0.885, 0.885)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -38,4 +38,4 @@ texture_under = ExtResource("3_7uc8d")
 texture_progress = ExtResource("4_50pgf")
 texture_progress_offset = Vector2(0, 0.91)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_OnArea2DBodyEntered"]

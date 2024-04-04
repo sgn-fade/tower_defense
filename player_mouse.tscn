@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuvmijcqli0a7"]
 
-[ext_resource type="Script" path="res://player_mouse.gd" id="1_26y6n"]
+[ext_resource type="Script" path="res://scripts/PlayerMouse.cs" id="1_2x6dj"]
 [ext_resource type="Texture2D" uid="uid://cifolrg2ce12w" path="res://mouse.png" id="2_ep6nj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v1y1v"]
@@ -10,7 +10,7 @@ radius = 3.4801
 z_index = 5
 z_as_relative = false
 scale = Vector2(3, 3)
-script = ExtResource("1_26y6n")
+script = ExtResource("1_2x6dj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(7, 12.3333)
@@ -23,5 +23,5 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouse"]
 shape = SubResource("CircleShape2D_v1y1v")
 
-[connection signal="body_entered" from="mouse" to="." method="_on_mouse_body_entered"]
-[connection signal="body_exited" from="mouse" to="." method="_on_mouse_body_exited"]
+[connection signal="body_entered" from="mouse" to="." method="OnMouseBodyEntered"]
+[connection signal="body_exited" from="mouse" to="." method="OnMouseBodyExited"]

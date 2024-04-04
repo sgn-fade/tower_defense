@@ -1,16 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch4155lpcfcev"]
+[gd_scene load_steps=6 format=3 uid="uid://ch4155lpcfcev"]
 
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_r5vwx"]
+[ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_5sqda"]
 [ext_resource type="Texture2D" uid="uid://b2esw6nugblyv" path="res://enemy.png" id="2_6fixh"]
+[ext_resource type="Texture2D" uid="uid://jnd2y06n500d" path="res://enemy_health_under.png" id="3_e0luw"]
+[ext_resource type="Texture2D" uid="uid://dlq05o34xu5e7" path="res://enemy_health_progress.png" id="4_g1lit"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpd2t"]
 
 [node name="enemy" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-script = ExtResource("1_r5vwx")
+script = ExtResource("1_5sqda")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_6fixh")
 
 [node name="enemy" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_wpd2t")
+
+[node name="hpBar" type="TextureProgressBar" parent="."]
+offset_left = -10.5
+offset_top = -19.0
+offset_right = 29.5
+offset_bottom = 21.0
+scale = Vector2(0.57, 0.57)
+max_value = 5.0
+value = 5.0
+texture_under = ExtResource("3_e0luw")
+texture_progress = ExtResource("4_g1lit")
+texture_progress_offset = Vector2(0, 0.91)
+
+[node name="damageParticles" type="CPUParticles2D" parent="."]
+modulate = Color(0.921569, 0.180392, 0, 1)
+emitting = false
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.82
+direction = Vector2(1, 5)
+spread = 92.73
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0

@@ -3,8 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://csmsa7mr6nd1g" path="res://background.png" id="1_tpd5u"]
 [ext_resource type="PackedScene" uid="uid://c46sb8yk1p1hh" path="res://mana_ui.tscn" id="1_wqcf6"]
 [ext_resource type="PackedScene" uid="uid://jn3nv8awmg6d" path="res://tower.tscn" id="2_1e568"]
-[ext_resource type="Script" path="res://spawner.gd" id="3_2qn4q"]
 [ext_resource type="PackedScene" uid="uid://cuvmijcqli0a7" path="res://player_mouse.tscn" id="4_yi266"]
+
+[sub_resource type="GDScript" id="GDScript_4glvs"]
+script/source = "extends Node2D
+var enemy_scene = load(\"res://enemy.tscn\")
+
+
+func _ready():
+	for i in 100:
+		await get_tree().create_timer(1).timeout
+		var enemy = enemy_scene.instantiate()
+		enemy.global_position = get_child(randi() % get_child_count()).position + Vector2(randi() % 20 - 10, randi() % 20 - 10)
+		add_child(enemy)
+
+
+"
 
 [node name="game" type="Node2D"]
 
@@ -31,7 +45,7 @@ texture = ExtResource("1_tpd5u")
 position = Vector2(-0.999756, -0.999939)
 
 [node name="spawners" type="Node2D" parent="world"]
-script = ExtResource("3_2qn4q")
+script = SubResource("GDScript_4glvs")
 
 [node name="Marker2D" type="Marker2D" parent="world/spawners"]
 position = Vector2(1661, 4)
