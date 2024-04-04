@@ -1,8 +1,0 @@
-res://game.tscn
-res://tower.tscn
-res://enemy.tscn
-res://player_mouse.tscn
-res://mana_ui.tscn
-res://spawner.gd
-res://player_mouse.gd
-res://CharacterBody2D.gd
