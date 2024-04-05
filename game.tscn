@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cf0ehpkkpkrfv"]
 
+[ext_resource type="PackedScene" uid="uid://dbo6es4daanjm" path="res://ui.tscn" id="1_srvqn"]
 [ext_resource type="Texture2D" uid="uid://csmsa7mr6nd1g" path="res://background.png" id="1_tpd5u"]
-[ext_resource type="PackedScene" uid="uid://c46sb8yk1p1hh" path="res://mana_ui.tscn" id="1_wqcf6"]
 [ext_resource type="PackedScene" uid="uid://jn3nv8awmg6d" path="res://tower.tscn" id="2_1e568"]
 [ext_resource type="PackedScene" uid="uid://cuvmijcqli0a7" path="res://player_mouse.tscn" id="4_yi266"]
 
@@ -22,15 +22,7 @@ func _ready():
 
 [node name="game" type="Node2D"]
 
-[node name="ui" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="mana_ui" parent="ui" instance=ExtResource("1_wqcf6")]
-offset_left = 778.0
-offset_top = -496.0
-offset_right = 819.0
-offset_bottom = -455.0
+[node name="ui" parent="." instance=ExtResource("1_srvqn")]
 
 [node name="world" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -84,4 +76,3 @@ position = Vector2(-1426, -657)
 position = Vector2(-1465, 726)
 
 [node name="player_mouse" parent="world" instance=ExtResource("4_yi266")]
-position = Vector2(155, 98)

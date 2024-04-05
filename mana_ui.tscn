@@ -6,21 +6,23 @@
 [node name="mana_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 41.0
-offset_bottom = 41.0
+offset_left = -45.0
+offset_top = -43.0
+offset_right = -20.0
+offset_bottom = -20.0
 scale = Vector2(4, 4)
 script = ExtResource("1_kbtl4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 24.0
+offset_bottom = 23.0
 texture = ExtResource("2_2034i")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = -18.0
-offset_top = 6.5
-offset_right = 22.0
-offset_bottom = 29.5
+offset_left = 6.5
+offset_top = -0.75
+offset_right = 46.5
+offset_bottom = 22.25
 text = "0"

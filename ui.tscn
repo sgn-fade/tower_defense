@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbo6es4daanjm"]
+
+[ext_resource type="PackedScene" uid="uid://c46sb8yk1p1hh" path="res://mana_ui.tscn" id="1_wg1t2"]
+[ext_resource type="PackedScene" uid="uid://bseowmyjb0qsr" path="res://spawn_ui.tscn" id="2_ninfm"]
+
+[node name="ui" type="CanvasLayer"]
+layer = 0
+
+[node name="mana_ui" parent="." instance=ExtResource("1_wg1t2")]
+offset_left = 1821.0
+offset_top = 52.0
+offset_right = 1862.0
+offset_bottom = 93.0
+scale = Vector2(3, 3)
+
+[node name="spawnUi" parent="." instance=ExtResource("2_ninfm")]
+anchors_preset = -1
+anchor_top = 0.564
+anchor_right = 0.0
+anchor_bottom = 0.564
+offset_left = 942.0
+offset_top = -37.12
+offset_right = 1942.0
+offset_bottom = 462.88
