@@ -1,9 +1,10 @@
 using Godot;
-using System;
+
+namespace tower_deff.scripts;
 
 public partial class Tower : StaticBody2D
 {
-    private int hp = 10;
+    private int _hp = 10;
 
     public override void _Ready()
     {
@@ -13,7 +14,7 @@ public partial class Tower : StaticBody2D
     private void _OnArea2DBodyEntered(Node body)
     {
         body.QueueFree();
-        hp -= 1;
-        GetNode<TextureProgressBar>("TextureProgressBar").Value = hp * 10;
+        _hp -= 1;
+        GetNode<TextureProgressBar>("TextureProgressBar").Value = _hp * 10;
     }
 }

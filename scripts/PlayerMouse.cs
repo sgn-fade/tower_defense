@@ -1,10 +1,10 @@
 using Godot;
-using System;
-using tower_deff.scripts;
+
+namespace tower_deff.scripts;
 
 public partial class PlayerMouse : Node2D
 {
-    private tower_deff.scripts.Enemy _bodyEnemy;
+    private Enemy _bodyEnemy;
 
     public override void _Process(double delta)
     {
@@ -17,7 +17,7 @@ public partial class PlayerMouse : Node2D
 
     private void OnMouseBodyEntered(Node body)
     {
-        _bodyEnemy = (tower_deff.scripts.Enemy)body;
+        _bodyEnemy = (Enemy)body;
     }
 
     private void OnMouseBodyExited(Node body)

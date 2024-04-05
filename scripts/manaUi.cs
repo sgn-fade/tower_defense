@@ -1,5 +1,6 @@
 using Godot;
-using System;
+
+namespace tower_deff.scripts;
 
 public partial class manaUi : Control
 {
