@@ -1,9 +1,68 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch4155lpcfcev"]
+[gd_scene load_steps=15 format=3 uid="uid://ch4155lpcfcev"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_5sqda"]
-[ext_resource type="Texture2D" uid="uid://b2esw6nugblyv" path="res://enemy.png" id="2_6fixh"]
+[ext_resource type="Shader" path="res://shaders/color_switcher.gdshader" id="2_bop00"]
+[ext_resource type="Texture2D" uid="uid://cg4a8mi1hjulw" path="res://Sprites/UnitMove.png" id="2_btnam"]
 [ext_resource type="Texture2D" uid="uid://jnd2y06n500d" path="res://enemy_health_under.png" id="3_e0luw"]
 [ext_resource type="Texture2D" uid="uid://dlq05o34xu5e7" path="res://enemy_health_progress.png" id="4_g1lit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aouwj"]
+shader = ExtResource("2_bop00")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tp6d"]
+atlas = ExtResource("2_btnam")
+region = Rect2(0, 0, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jlpv"]
+atlas = ExtResource("2_btnam")
+region = Rect2(10, 0, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbx3j"]
+atlas = ExtResource("2_btnam")
+region = Rect2(20, 0, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx58f"]
+atlas = ExtResource("2_btnam")
+region = Rect2(30, 0, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mcvm"]
+atlas = ExtResource("2_btnam")
+region = Rect2(40, 0, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut5ah"]
+atlas = ExtResource("2_btnam")
+region = Rect2(50, 0, 10, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1qkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tp6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jlpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbx3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx58f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mcvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut5ah")
+}],
+"loop": true,
+"name": &"move",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpd2t"]
 
@@ -11,11 +70,15 @@
 scale = Vector2(2, 2)
 script = ExtResource("1_5sqda")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_aouwj")
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_6fixh")
+sprite_frames = SubResource("SpriteFrames_n1qkl")
+animation = &"move"
+autoplay = "move"
 
 [node name="enemy" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_wpd2t")
 
 [node name="hpBar" type="TextureProgressBar" parent="."]

@@ -8,14 +8,14 @@ public partial class Enemy : CharacterBody2D
     private int _hp = 5;
     private TextureProgressBar _hpBar;
     private CpuParticles2D _damageParticles;
-    private Sprite2D _sprite2D;
+    private AnimatedSprite2D _sprite2D;
 
     
     public override void _Ready()
     {
         _hpBar = GetNode<TextureProgressBar>("hpBar");
         _damageParticles = GetNode<CpuParticles2D>("damageParticles");
-        _sprite2D = GetNode<Sprite2D>("Sprite2D");
+        _sprite2D = GetNode<AnimatedSprite2D>("Sprite2D");
     }
 
     public override void _Process(double delta)

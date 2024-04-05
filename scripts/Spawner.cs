@@ -15,9 +15,9 @@ public partial class Spawner : Node2D
     {
         for (int i = 0; i < 100; i++)
         {
-            await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
+            await ToSignal(GetTree().CreateTimer(1f), "timeout");
             Node2D enemy = (Node2D)_enemyScene.Instantiate();
-            enemy.GlobalPosition = ((Node2D)GetChild((int)(GD.Randi() % GetChildCount()))).Position + new Vector2(GD.Randi() % 20 - 10, GD.Randi() % 20 - 10);
+            enemy.GlobalPosition = ((Node2D)GetChild((int)(GD.Randi() % GetChildCount()))).Position + new Vector2(GD.Randi() % 20, GD.Randi() % 20);
             AddChild(enemy);
         }
     }
