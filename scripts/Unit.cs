@@ -10,22 +10,22 @@ public partial class Unit : CharacterBody2D
     protected CpuParticles2D DamageParticles;
     protected Node2D Core;    
     protected Unit TargetBody;
+    protected Area2D AttackArea;
 
     protected Vector2 MoveTarget;
     
     
     public override void _Process(double delta)
     {
-        Move();
-        if (TargetBody == null)
+        if (!IsInstanceValid(TargetBody) || TargetBody == null)
         {
-            MoveTarget = GlobalPosition;
             return;
         }
         MoveTarget = TargetBody.GlobalPosition;
+        Move();
     }
 
-    private void Move()
+    protected void Move()
     {
         Velocity = (MoveTarget - GlobalPosition).Normalized() * 100;
         var direction = Math.Sign(Velocity.X) == 0 ? new Vector2(1, 1) : new Vector2(-Math.Sign(Velocity.X), 1);
@@ -47,11 +47,14 @@ public partial class Unit : CharacterBody2D
         set => _hp = value;
     }
 
-    private void _onAttackAreaBodyEntered(Node2D body)
+    private async void _onAttackAreaBodyEntered(Node2D body)
     {
         if (body == TargetBody)
         {
             TargetBody.Damage(1);
+            AttackArea.SetDeferred("monitoring", false);
+            await ToSignal(GetTree().CreateTimer(0.4f), "timeout");
+            AttackArea.SetDeferred("monitoring", true);
         }
     }
 }

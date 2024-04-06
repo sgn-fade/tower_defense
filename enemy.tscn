@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://k6m6avmmk0s7"]
+[gd_scene load_steps=5 format=3 uid="uid://k6m6avmmk0s7"]
 
 [ext_resource type="Script" path="res://scripts/units/Enemy.cs" id="1_11xvq"]
 [ext_resource type="PackedScene" uid="uid://ch4155lpcfcev" path="res://unit.tscn" id="1_p4e8d"]
+[ext_resource type="Shader" path="res://shaders/color_switcher.gdshader" id="2_bop00"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrvus"]
+shader = ExtResource("2_bop00")
+shader_parameter/color = Vector4(1, 0, 0, 1)
 
 [node name="enemy" instance=ExtResource("1_p4e8d")]
 script = ExtResource("1_11xvq")
+
+[node name="Sprite2D" parent="core" index="0"]
+material = SubResource("ShaderMaterial_qrvus")
+
+[node name="attackArea" parent="core" index="1"]
+monitoring = false
 
 [connection signal="body_entered" from="detectArea" to="." method="_onDetectAreaBodyEntered"]

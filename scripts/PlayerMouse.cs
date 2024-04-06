@@ -17,7 +17,10 @@ public partial class PlayerMouse : Node2D
 
     private void OnMouseBodyEntered(Node body)
     {
-        _bodyEnemy = (units.Enemy)body;
+        if (body is units.Enemy enemy)
+        {
+            _bodyEnemy = enemy;
+        }
     }
 
     private void OnMouseBodyExited(Node body)

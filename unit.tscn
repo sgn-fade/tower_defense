@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://ch4155lpcfcev"]
+[gd_scene load_steps=15 format=3 uid="uid://ch4155lpcfcev"]
 
 [ext_resource type="Script" path="res://scripts/Unit.cs" id="1_t2a16"]
-[ext_resource type="Shader" path="res://shaders/color_switcher.gdshader" id="2_78ifp"]
 [ext_resource type="Texture2D" uid="uid://cg4a8mi1hjulw" path="res://Sprites/UnitMove.png" id="3_y63ac"]
 [ext_resource type="Texture2D" uid="uid://jnd2y06n500d" path="res://enemy_health_under.png" id="4_vefdn"]
 [ext_resource type="Texture2D" uid="uid://dlq05o34xu5e7" path="res://enemy_health_progress.png" id="5_bqbf0"]
@@ -9,11 +8,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpd2t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxdb2"]
-radius = 93.0
-height = 276.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aouwj"]
-shader = ExtResource("2_78ifp")
+radius = 150.0
+height = 329.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4tp6d"]
 atlas = ExtResource("3_y63ac")
@@ -71,8 +67,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mc68"]
-radius = 26.5
-height = 61.0
+radius = 20.5
+height = 63.0
 
 [node name="unit" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -119,7 +115,6 @@ shape = SubResource("CapsuleShape2D_gxdb2")
 [node name="core" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="core"]
-material = SubResource("ShaderMaterial_aouwj")
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_n1qkl")
 animation = &"move"
@@ -129,7 +124,7 @@ autoplay = "move"
 scale = Vector2(1, 1)
 
 [node name="col" type="CollisionShape2D" parent="core/attackArea"]
-position = Vector2(-26, 0.5)
+position = Vector2(-2.98023e-08, 4.76837e-07)
 shape = SubResource("CapsuleShape2D_0mc68")
 
 [connection signal="body_entered" from="core/attackArea" to="." method="_onAttackAreaBodyEntered"]
