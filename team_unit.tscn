@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxs56l4sutl4w"]
+
+[ext_resource type="PackedScene" uid="uid://ch4155lpcfcev" path="res://unit.tscn" id="1_yt0yh"]
+[ext_resource type="Script" path="res://scripts/units/TeamUnit.cs" id="2_xvkh0"]
+
+[node name="teamUnit" instance=ExtResource("1_yt0yh")]
+script = ExtResource("2_xvkh0")
+
+[connection signal="body_entered" from="detectArea" to="." method="_onDetectAreaBodyEntered"]

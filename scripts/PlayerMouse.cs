@@ -4,7 +4,7 @@ namespace tower_deff.scripts;
 
 public partial class PlayerMouse : Node2D
 {
-    private Enemy _bodyEnemy;
+    private units.Enemy _bodyEnemy;
 
     public override void _Process(double delta)
     {
@@ -17,7 +17,7 @@ public partial class PlayerMouse : Node2D
 
     private void OnMouseBodyEntered(Node body)
     {
-        _bodyEnemy = (Enemy)body;
+        _bodyEnemy = (units.Enemy)body;
     }
 
     private void OnMouseBodyExited(Node body)
