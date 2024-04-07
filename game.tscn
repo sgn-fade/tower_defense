@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf0ehpkkpkrfv"]
+[gd_scene load_steps=7 format=3 uid="uid://cf0ehpkkpkrfv"]
 
 [ext_resource type="PackedScene" uid="uid://dbo6es4daanjm" path="res://ui.tscn" id="1_srvqn"]
 [ext_resource type="Texture2D" uid="uid://csmsa7mr6nd1g" path="res://background.png" id="1_tpd5u"]
 [ext_resource type="PackedScene" uid="uid://jn3nv8awmg6d" path="res://tower.tscn" id="2_1e568"]
 [ext_resource type="Script" path="res://scripts/Spawner.cs" id="4_2qabu"]
 [ext_resource type="PackedScene" uid="uid://cuvmijcqli0a7" path="res://player_mouse.tscn" id="4_yi266"]
+[ext_resource type="PackedScene" uid="uid://cf86hbp8mmoog" path="res://man_stone.tscn" id="6_jdm1r"]
 
 [node name="game" type="Node2D"]
 
@@ -64,3 +65,6 @@ position = Vector2(-1426, -657)
 position = Vector2(-1465, 726)
 
 [node name="player_mouse" parent="world" instance=ExtResource("4_yi266")]
+
+[node name="manStone" parent="world" instance=ExtResource("6_jdm1r")]
+position = Vector2(514, 54)

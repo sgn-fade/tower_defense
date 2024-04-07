@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6evfungpkccj"]
+[gd_scene load_steps=3 format=3 uid="uid://b6evfungpkccj"]
 
 [ext_resource type="Texture2D" uid="uid://bqr12dya5jsp" path="res://panel.png" id="1_02qhq"]
 [ext_resource type="Texture2D" uid="uid://cd303xn3bxqcl" path="res://mana.png" id="2_01d1m"]
-[ext_resource type="Texture2D" uid="uid://8djrtj70dpn3" path="res://2.png" id="3_wyvci"]
 
 [node name="spawnUiElement" type="Control"]
+visible = false
 layout_mode = 3
 anchor_left = 0.072
 anchor_top = 0.198
@@ -31,11 +31,3 @@ offset_top = -5.66667
 offset_right = 53.0
 offset_bottom = 6.33333
 texture = ExtResource("2_01d1m")
-
-[node name="TextureRect3" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 4.66667
-offset_right = 44.0
-offset_bottom = 57.6667
-texture = ExtResource("3_wyvci")

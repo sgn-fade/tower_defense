@@ -121,7 +121,6 @@ animation = &"move"
 autoplay = "move"
 
 [node name="attackArea" type="Area2D" parent="core"]
-scale = Vector2(1, 1)
 
 [node name="col" type="CollisionShape2D" parent="core/attackArea"]
 position = Vector2(-2.98023e-08, 4.76837e-07)

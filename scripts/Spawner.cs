@@ -18,6 +18,7 @@ public partial class Spawner : Node2D
     {
         for (int i = 0; i < 100; i++)
         {
+            return;
             await ToSignal(GetTree().CreateTimer(1f), "timeout");
             Node2D enemy = (Node2D)_enemyScene.Instantiate();
             enemy.GlobalPosition = ((Node2D)GetChild((int)(GD.Randi() % GetChildCount()))).Position +
@@ -30,6 +31,7 @@ public partial class Spawner : Node2D
     {
         if (Input.IsActionJustPressed("LMB"))
         {
+            return;
             Node2D team = (Node2D)_teamScene.Instantiate();
             team.GlobalPosition = GetGlobalMousePosition();
             AddChild(team);
