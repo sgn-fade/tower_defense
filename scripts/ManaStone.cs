@@ -6,13 +6,13 @@ public partial class ManaStone : StaticBody2D
 {
     private AnimationPlayer _player;
     private Sprite2D _circle;
-    private bool _mouseInArea;
-    
+    private bool _mouseInArea = false;
+    private Ui _ui;
     public override void _Ready()
     {
         _player = GetNode<AnimationPlayer>("AnimationPlayer");
         _circle = GetNode<Sprite2D>("Circle");
-
+        _ui = GetNode<Ui>("/root/game/ui");
     }
 
     public override void _Process(double delta)
@@ -35,11 +35,19 @@ public partial class ManaStone : StaticBody2D
 
     private void _onArea2dAreaEntered(Node2D area)
     {
-        
         if (area.GetParent() is PlayerMouse)
         {
-            GD.Print(true);
+            _ui.ChangeCursoreTexture("pickaxe");
             _mouseInArea = true;
+        }
+    }
+
+    private void _OnArea2dAreaExited(Node2D area)
+    {
+        if (area.GetParent() is PlayerMouse)
+        {
+            _ui.ChangeCursoreTexture("sword");
+            _mouseInArea = false;
         }
     }
 }

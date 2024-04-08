@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Ui.cs" id="1_go06s"]
 [ext_resource type="PackedScene" uid="uid://c46sb8yk1p1hh" path="res://mana_ui.tscn" id="1_wg1t2"]
 [ext_resource type="PackedScene" uid="uid://bseowmyjb0qsr" path="res://spawn_ui.tscn" id="2_ninfm"]
-[ext_resource type="Texture2D" uid="uid://cifolrg2ce12w" path="res://mouse.png" id="4_mafeu"]
+[ext_resource type="Texture2D" uid="uid://cifolrg2ce12w" path="res://Sprites/Mouse/sword.png" id="4_mafeu"]
 
 [node name="Ui" type="CanvasLayer"]
 layer = 0

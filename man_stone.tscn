@@ -82,3 +82,4 @@ scale = Vector2(0.178571, 0.178571)
 texture = ExtResource("4_uthuo")
 
 [connection signal="area_entered" from="Area2D" to="." method="_onArea2dAreaEntered"]
+[connection signal="area_exited" from="Area2D" to="." method="_OnArea2dAreaExited"]
