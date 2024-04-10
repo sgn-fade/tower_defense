@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://rqf4ayjsj5nw"]
+
+[ext_resource type="Script" path="res://scripts/ManaIncreaseValue.cs" id="1_3gki3"]
+[ext_resource type="Texture2D" uid="uid://cd303xn3bxqcl" path="res://mana.png" id="1_60b7d"]
+[ext_resource type="FontFile" uid="uid://rwdwfl8hhul1" path="res://font/000webfont1.ttf" id="2_uvkfx"]
+
+[sub_resource type="Animation" id="Animation_d7iev"]
+resource_name = "main"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.307786, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_07vth"]
+_data = {
+"main": SubResource("Animation_d7iev")
+}
+
+[node name="manaIncreeseValue" type="Node2D"]
+script = ExtResource("1_3gki3")
+
+[node name="sprite" type="Node2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="mana" type="Sprite2D" parent="sprite"]
+texture = ExtResource("1_60b7d")
+
+[node name="value" type="Label" parent="sprite"]
+offset_left = -6.0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("2_uvkfx")
+text = "+1"
+
+[node name="player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_07vth")
+}

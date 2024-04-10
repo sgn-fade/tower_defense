@@ -19,11 +19,13 @@ public partial class ManaStone : StaticBody2D
     {
         if (_mouseInArea && Input.IsActionJustPressed("LMB"))
         {
-            if (_player.IsPlaying())
+            if (_player.CurrentAnimation == "start")
             {
+                
                 if (_circle.Scale.X < 0.307 && _circle.Scale.X > 0.179)
                 {
                     WorldData.EnemyKilled(1);
+                    _player.Play("damage");
                 }
             }
             else
