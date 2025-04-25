@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://ch4155lpcfcev"]
 
-[ext_resource type="Script" path="res://scripts/Unit.cs" id="1_t2a16"]
+[ext_resource type="Script" uid="uid://dgkypnxt8tusv" path="res://scripts/Unit.cs" id="1_t2a16"]
 [ext_resource type="Texture2D" uid="uid://cg4a8mi1hjulw" path="res://Sprites/UnitMove.png" id="3_y63ac"]
 [ext_resource type="Texture2D" uid="uid://jnd2y06n500d" path="res://enemy_health_under.png" id="4_vefdn"]
 [ext_resource type="Texture2D" uid="uid://dlq05o34xu5e7" path="res://enemy_health_progress.png" id="5_bqbf0"]

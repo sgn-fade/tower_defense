@@ -1,100 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf86hbp8mmoog"]
+[gd_scene load_steps=9 format=3 uid="uid://cf86hbp8mmoog"]
 
-[ext_resource type="Script" path="res://scripts/ManaStone.cs" id="1_7q0nd"]
+[ext_resource type="Script" uid="uid://ee3wireww30o" path="res://scripts/ManaStone.cs" id="1_7q0nd"]
 [ext_resource type="Texture2D" uid="uid://clcyhoe2n2lk3" path="res://Sprites/manaStone.png" id="2_efgug"]
 [ext_resource type="Texture2D" uid="uid://dmk8eug2uid7w" path="res://Sprites/QTE/circleZone.png" id="3_mmq40"]
-[ext_resource type="Texture2D" uid="uid://dr467xa2cs3h4" path="res://Sprites/QTE/circle.png" id="4_uthuo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu0mf"]
 size = Vector2(29.3333, 21.3333)
-
-[sub_resource type="Animation" id="Animation_kcw2h"]
-resource_name = "start"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Circle:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(0.05, 0.05)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Circle:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("greenZone:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("damageParticles:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("damageParticles:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.356863, 0.364706, 0.376471, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("damageParticles:amount")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [15]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("damageParticles:spread")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [90.0]
-}
 
 [sub_resource type="Animation" id="Animation_ncxw3"]
 resource_name = "damage"
@@ -113,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Circle:visible")
+tracks/1/path = NodePath("greenZone:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -125,60 +36,112 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("greenZone:visible")
+tracks/2/path = NodePath("damageParticles:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(0.254902, 0.341176, 0.811765, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("damageParticles:modulate")
+tracks/3/path = NodePath("damageParticles:amount")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.254902, 0.341176, 0.811765, 1)]
+"update": 1,
+"values": [45]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("damageParticles:amount")
+tracks/4/path = NodePath("damageParticles:spread")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [45]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("damageParticles:spread")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [180.0]
 }
 
+[sub_resource type="Animation" id="Animation_kcw2h"]
+resource_name = "start"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("greenZone:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("damageParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("damageParticles:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.356863, 0.364706, 0.376471, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("damageParticles:amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("damageParticles:spread")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [90.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nc0kv"]
 _data = {
-"damage": SubResource("Animation_ncxw3"),
-"start": SubResource("Animation_kcw2h")
+&"damage": SubResource("Animation_ncxw3"),
+&"start": SubResource("Animation_kcw2h")
 }
 
 [sub_resource type="Curve" id="Curve_s5ayy"]
-max_value = 10.0
+_limits = [0.0, 10.0, 0.0, 1.0]
 _data = [Vector2(0.00561798, 2.41758), 0.0, 0.0, 0, 0, Vector2(0.988764, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -197,8 +160,9 @@ position = Vector2(0.333333, 3.33333)
 shape = SubResource("RectangleShape2D_uu0mf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
-"": SubResource("AnimationLibrary_nc0kv")
+&"": SubResource("AnimationLibrary_nc0kv")
 }
 
 [node name="greenZone" type="Sprite2D" parent="."]
@@ -207,16 +171,10 @@ position = Vector2(1.09333, -32.5733)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_mmq40")
 
-[node name="Circle" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1.09333, -32.5733)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_uthuo")
-
 [node name="damageParticles" type="CPUParticles2D" parent="."]
-modulate = Color(0.254902, 0.341176, 0.811765, 1)
+modulate = Color(0.356863, 0.364706, 0.376471, 1)
 emitting = false
-amount = 45
+amount = 15
 lifetime = 0.4
 one_shot = true
 explosiveness = 0.82

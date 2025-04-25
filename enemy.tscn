@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://k6m6avmmk0s7"]
 
-[ext_resource type="Script" path="res://scripts/units/Enemy.cs" id="1_11xvq"]
+[ext_resource type="Script" uid="uid://n611pmqaprb8" path="res://scripts/units/Enemy.cs" id="1_11xvq"]
 [ext_resource type="PackedScene" uid="uid://ch4155lpcfcev" path="res://unit.tscn" id="1_p4e8d"]
-[ext_resource type="Shader" path="res://shaders/color_switcher.gdshader" id="2_bop00"]
+[ext_resource type="Shader" uid="uid://bcscht5cy06vk" path="res://shaders/color_switcher.gdshader" id="2_bop00"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qrvus"]
 shader = ExtResource("2_bop00")

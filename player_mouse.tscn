@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuvmijcqli0a7"]
 
-[ext_resource type="Script" path="res://scripts/PlayerMouse.cs" id="1_2x6dj"]
+[ext_resource type="Script" uid="uid://h7mh4kniw1qe" path="res://scripts/PlayerMouse.cs" id="1_2x6dj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v1y1v"]
 radius = 3.4801

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxs56l4sutl4w"]
 
 [ext_resource type="PackedScene" uid="uid://ch4155lpcfcev" path="res://unit.tscn" id="1_yt0yh"]
-[ext_resource type="Script" path="res://scripts/units/TeamUnit.cs" id="2_xvkh0"]
-[ext_resource type="Shader" path="res://shaders/color_switcher.gdshader" id="3_pok81"]
+[ext_resource type="Script" uid="uid://do71ko0pwb65h" path="res://scripts/units/TeamUnit.cs" id="2_xvkh0"]
+[ext_resource type="Shader" uid="uid://bcscht5cy06vk" path="res://shaders/color_switcher.gdshader" id="3_pok81"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yw1an"]
 shader = ExtResource("3_pok81")
